@@ -1,7 +1,10 @@
-from flask import Flask
+from flask import Flask 
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello world</p>"
+    @app.route('/')
+    def index():
+        return '<h1>Hey There!</h1>'
+
+    return app
